@@ -8,7 +8,7 @@ import re
 class LTTG:
     def __init__ (self, expression):
         self.expression = expression
-        self.variables = self.extract_variables()
+        self.variables = self.eval_var()
 
     def eval_var(self):
         """Evaluate unique variables from boolean expression."""
