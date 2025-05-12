@@ -41,12 +41,20 @@ class LTTG:
         return headers, table
     
     def print_TruthTable(self):
-        """Print the truth table."""
+        """Print the truth table with formatted output."""
         headers, table = self.generate_TruthTable()
+
+        # Print headers
         print(' | '.join(headers))
         print('-' * (len(headers) * 4))
+
+        # Print rows with formatting
         for row in table:
-            print(' | '.join(map(str, row)))
+            formatted_row = [
+                f"\033[41m{val}\033[0m" if val == 0 else f"\033[1;42m{val}\033[0m"
+                for val in row
+            ]
+            print(' | '.join(formatted_row))
 
 class main:
     def __init__(self):
