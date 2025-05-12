@@ -14,5 +14,9 @@ The input should look similar to this:
 This section outlines the general input syntax for LTTG:
 
 - Channels/Variables: any lowercase single letter (preferably in alphabetic order, `x` is reserved for output)
-- Logic Operators: `AND`, `OR`, `NAND`, `XOR`, `NOR`, `NOT`
-- negated values: e.g. `(NOT a)`
+- Logic Operators: `AND`, `OR`, ~`NAND`, `XOR`, `NOR`,~ `NOT`
+- negated values: e.g. `NOT a`
+
+**Iportant note:**
+
+`NOT` can only be used for **negated** values. Not to compare two values!
