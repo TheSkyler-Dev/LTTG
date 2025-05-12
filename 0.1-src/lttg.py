@@ -24,14 +24,6 @@ class LTTG:
         expression = re.sub(r'\bOR\b', 'or', expression)
         expression = re.sub(r'\bNOT\b', 'not', expression)
 
-        # Handle NAND and NOR explicitly
-        expression = re.sub(r'\bNAND\b', lambda match: 'not (', expression)  # Open parenthesis for NAND
-        expression = re.sub(r'\bNOR\b', lambda match: 'not (', expression)   # Open parenthesis for NOR
-        expression = expression.replace(')', ')')  # Ensure closing parentheses are handled
-
-        # Replace XOR with its logical equivalent
-        expression = re.sub(r'\bXOR\b', lambda match: '!=', expression)
-
         # Evaluate the expression
         return eval(expression)
     
