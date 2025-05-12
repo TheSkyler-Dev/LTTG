@@ -34,3 +34,13 @@ class LTTG:
         """Generate a truth table for the expression."""
         table = []
         headers = self.variables + ['Result']
+        combinations = list(itertools.product([0, 1], repeat=len(self.variables)))
+
+        for combination in combinations:
+            values = dict(zip(self.variables, combination))
+            result = self.eval_expr(self.expression, values)
+            table.append(list(combination) + [int(result)])
+
+        return headers, table
+    
+    
