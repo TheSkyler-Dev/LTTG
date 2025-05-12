@@ -16,9 +16,9 @@ This tool supports the following logic operators:
 - `OR`
 - `NOT`
 
-### Unsupported Gates
-For unsupported gates like `XOR`, `NAND`, and `NOR`, you can rewrite them using `AND`, `OR`, and `NOT`:
+### Unsupported Operators
+For unsupported operators like `XOR`, `NAND`, and `NOR`, you can rewrite them using `AND`, `OR`, and `NOT`:
 
-- `A XOR B` → `(A AND NOT B) OR (NOT A AND B)`
-- `A NAND B` → `NOT (A AND B)`
-- `A NOR B` → `NOT (A OR B)`
+- `a XOR b` → `(a AND NOT b) OR (NOT a AND b)`
+- `a NAND b` → `NOT (a AND b)`
+- `a NOR b` → `NOT (a OR b)`
