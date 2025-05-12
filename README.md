@@ -10,13 +10,15 @@ The input should look similar to this:
 (a OR b) AND (c OR d)
 ```
 
-## Input syntax
-This section outlines the general input syntax for LTTG:
+## Input Syntax
+This tool supports the following logic operators:
+- `AND`
+- `OR`
+- `NOT`
 
-- Channels/Variables: any lowercase single letter (preferably in alphabetic order, `x` is reserved for output)
-- Logic Operators: `AND`, `OR`, ~`NAND`, `XOR`, `NOR`,~ `NOT`
-- negated values: e.g. `NOT a`
+### Unsupported Gates
+For unsupported gates like `XOR`, `NAND`, and `NOR`, you can rewrite them using `AND`, `OR`, and `NOT`:
 
-**Iportant note:**
-
-`NOT` can only be used for **negated** values. Not to compare two values!
+- `A XOR B` → `(A AND NOT B) OR (NOT A AND B)`
+- `A NAND B` → `NOT (A AND B)`
+- `A NOR B` → `NOT (A OR B)`
