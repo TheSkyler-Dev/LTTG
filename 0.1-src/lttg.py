@@ -43,4 +43,22 @@ class LTTG:
 
         return headers, table
     
-    
+    def print_TruthTable(self):
+        """Print the truth table."""
+        headers, table = self.generate_TruthTable()
+        print(' | '.join(headers))
+        print('-' * (len(headers) * 4))
+        for row in table:
+            print(' | '.join(map(str, row)))
+
+class main:
+    def __init__(self):
+        self.lttg = None
+
+    def run(self):
+        expression = input("Enter a boolean expression: ")
+        self.lttg = LTTG(expression)
+        self.lttg.print_TruthTable()
+
+if __name__ == "__main__":
+    main().run()
