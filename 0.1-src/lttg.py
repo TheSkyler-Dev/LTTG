@@ -19,13 +19,18 @@ class LTTG:
         for var, val in values.items():
             expression = re.sub(rf'\b{var}\b', str(val), expression)
 
-        # replace logical operators with Python equivalents
-        expression = expression.replace('AND', 'and')
-        expression = expression.replace('OR', 'or')
-        expression = expression.replace('NOT', 'not')
-        expression = expression.replace('NAND', 'not (').replace(')', ')')
-        expression = expression.replace('NOR', 'not (').replace(')', ')')
-        expression = expression.replace('XOR', '^')
+        # Replace logical operators with Python equivalents
+        expression = re.sub(r'\bAND\b', 'and', expression)
+        expression = re.sub(r'\bOR\b', 'or', expression)
+        expression = re.sub(r'\bNOT\b', 'not', expression)
+
+        # Handle NAND and NOR explicitly
+        expression = re.sub(r'\bNAND\b', lambda match: 'not (', expression)  # Open parenthesis for NAND
+        expression = re.sub(r'\bNOR\b', lambda match: 'not (', expression)   # Open parenthesis for NOR
+        expression = expression.replace(')', ')')  # Ensure closing parentheses are handled
+
+        # Replace XOR with its logical equivalent
+        expression = re.sub(r'\bXOR\b', lambda match: '!=', expression)
 
         # Evaluate the expression
         return eval(expression)
