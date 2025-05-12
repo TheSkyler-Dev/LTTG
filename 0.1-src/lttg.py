@@ -23,9 +23,9 @@ class LTTG:
         expression = expression.replace('AND', 'and')
         expression = expression.replace('OR', 'or')
         expression = expression.replace('NOT', 'not')
-        expression = expression.replace('NAND', 'not (').replace(')', ')')
-        expression = expression.replace('NOR', 'not (').replace(')', ')')
-        expression = expression.replace('XOR', '^')
+        #expression = expression.replace('NAND', 'not (').replace(')', ')')
+        #expression = expression.replace('NOR', 'not (').replace(')', ')')
+        #expression = expression.replace('XOR', '^')
 
         # Evaluate the expression
         return eval(expression)
