@@ -30,8 +30,10 @@
 
 
 ;; main function to run the program
-(defun main ())
-
+(defun main ()
+  (format t "Enter a boolean expression: ")
+  (let* ((expr (read-line)) (vars (eval-vars expr)))
+    (print-TruthTable vars expr)))
 
 ;; main function call
 (main)
