@@ -1,5 +1,5 @@
 # LTTG
-LTTG, or Logic Truth Table Generator is a CLI tool that generates truth tables for boolean algebra with logic gates from a given scheme. The tool is written in Python and may later be rewritten or ported in Lisp.
+LTTG, or Logic Truth Table Generator is a CLI tool that generates truth tables for boolean algebra with logic gates from a given scheme. The tool is written in Python ~and may later be rewritten or ported in Lisp~.
 
 ## How it works
 LTTG takes a boolean expression, parses it with tokenization and then generates a truth table based on the expression. LTTG also accounts for De Morgan's Laws and also prints corresponding expression simplifications.
