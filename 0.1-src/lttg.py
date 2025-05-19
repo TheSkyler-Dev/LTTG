@@ -14,7 +14,8 @@ class LTTG:
         """Evaluate unique variables from boolean expression."""
         return sorted(set(re.findall(r'\b[a-z]\b', self.expression)) - {'x'})
     
-    def eval_expr(self, expression, values):
+    @staticmethod
+    def eval_expr(expression, values):
         """Evaluate the expression with the given variables."""
         for var, val in values.items():
             expression = re.sub(rf'\b{var}\b', str(val), expression)
@@ -27,7 +28,7 @@ class LTTG:
         # Evaluate the expression
         return eval(expression)
     
-    def generate_TruthTable(self):
+    def generate_truth_table(self):
         """Generate a truth table for the expression."""
         table = []
         headers = self.variables + ['Result']
@@ -40,9 +41,9 @@ class LTTG:
 
         return headers, table
     
-    def print_TruthTable(self):
+    def print_truth_table(self):
         """Print the truth table with formatted output."""
-        headers, table = self.generate_TruthTable()
+        headers, table = self.generate_truth_table()
 
         # Print headers
         print(' | '.join(headers))
@@ -56,14 +57,14 @@ class LTTG:
             ]
             print(' | '.join(formatted_row))
 
-class main:
+class Main:
     def __init__(self):
         self.lttg = None
 
     def run(self):
         expression = input("Enter a boolean expression: ")
         self.lttg = LTTG(expression)
-        self.lttg.print_TruthTable()
+        self.lttg.print_truth_table()
 
 if __name__ == "__main__":
-    main().run()
+    Main().run()
