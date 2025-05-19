@@ -5,6 +5,7 @@ import re
 
 # --- Node Classes ---
 
+# noinspection SpellCheckingInspection
 class LTTG:
     def __init__ (self, expression):
         self.expression = expression
@@ -57,6 +58,8 @@ class LTTG:
             ]
             print(' | '.join(formatted_row))
 
+
+# noinspection SpellCheckingInspection
 class Main:
     def __init__(self):
         self.lttg = None
