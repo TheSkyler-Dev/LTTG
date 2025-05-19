@@ -1,5 +1,4 @@
 ;; LTTG (Logic Truth Table Generator), (c) 2025 TheSkyler-Dev, Licensed under MIT License
-;; initializer function
 ;; function to evaluate variables in the given logic expression
 (defun eval-vars (expr)
   "Return a sorted list of unique single-letter variables in expression string"
